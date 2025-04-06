@@ -5,12 +5,12 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const backgroundImages = [
-    '/images/HeroSliders/heroslide1.webp',
-    '/images/HeroSliders/heroslide2.webp',
-    '/images/HeroSliders/heroslide3.webp',
-    '/images/HeroSliders/heroslide4.webp',
-    '/images/HeroSliders/heroslide5.webp',
-    '/images/HeroSliders/heroslide6.webp',
+    '/images/heroSliders/heroslide1.webp',
+    '/images/heroSliders/heroslide2.webp',
+    '/images/heroSliders/heroslide3.webp',
+    '/images/heroSliders/heroslide4.webp',
+    '/images/heroSliders/heroslide5.webp',
+    '/images/heroSliders/heroslide6.webp',
   ];
 
   useEffect(() => {
