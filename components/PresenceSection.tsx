@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 
 const videos = [
-  "/images/singapore-presence/presencesection2.mp4",
-  "/images/singapore-presence/presencesection2.mp4",
+  "/images/Singapore-presence/presencesection2.mp4",
+  "/images/Singapore-presence/presencesection2.mp4",
 ];
 
 const PresenceSection = () => {
