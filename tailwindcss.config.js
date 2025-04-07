@@ -8,8 +8,8 @@ module.exports = {
       extend: {
         fontFamily: {
           oswald: ['Oswald', 'sans-serif'],
-          montserrat: ['montserrat', 'Oswald'],
-          sans: ['Arial', 'sans-serif'],
+          montserrat: ['Montserrat', 'sans-serif'],
+          hind: ['Hind Guntur', 'sans-serif'],
         },
       },
     },

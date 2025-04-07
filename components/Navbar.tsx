@@ -150,9 +150,11 @@ const Navbar = () => {
           )}
         </div>
 
-        <button className="bg-white text-gray-900 font-semibold border border-blue-600 px-6 py-2 rounded-sm hover:bg-blue-600 hover:text-white transition-colors">
-          Contact Us
-        </button>
+        <Link href="/contact" passHref>
+          <button className="bg-white text-gray-900 font-semibold border border-blue-600 px-6 py-2 rounded-sm hover:bg-blue-600 hover:text-white transition-colors">
+            Contact Us
+          </button>
+        </Link>
       </div>
       </div>
 
