@@ -17,10 +17,7 @@ const AboutSection = () => {
         </div>
 
           <div>
-            <h4 className="text-blue-600 font-oswald font-medium mb-6">ABOUT US</h4>
-            <h3 className="text-3xl font-bold font-oswald text-gray-900 mb-4">
-              ABOUT YACHT INTERNATIONAL
-            </h3>
+            <h4 className="text-blue-600 font-oswald text-[25px] mb-6">ABOUT US</h4>
             <p className="text-gray-700 mb-4">
               Since our establishment, Yacht International has committed to excellence in
               maritime services, earning a trusted reputation across global shipping hubs.
@@ -31,7 +28,7 @@ const AboutSection = () => {
               with a focus on client satisfaction.
             </p>
             <p className="text-gray-700 mb-6">
-              Our skilled teams and fleet of crew & supply vessels serve over [insert number] clients
+              Our skilled teams and fleet of crew & supply vessels serve over 100+ clients
               with personnel transfer, cargo support, and anchorage services.
             </p>
             <Link href="/about" passHref><button className="border border-blue-600 text-gray-700 px-6 py-2 rounded hover:bg-blue-600 hover:text-white transition">

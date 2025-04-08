@@ -7,7 +7,7 @@ const navItems = [
   { name: "HOME", path: "/" },
   { name: "OUR FLEETS", path: "/our-fleets" },
   { name: "GALLERY", path: "/gallery" },
-  { name: "ABOUT US", path: "/about-us" },
+  { name: "ABOUT US", path: "/about" },
   { name: "PRESS RELEASES", path: "/press-releases" }
 ];
 const Navbar = () => {
@@ -52,15 +52,15 @@ const Navbar = () => {
   return (
     <nav className="w-full max-w-full h-[117px] flex relative bg-white mx-auto">
       <div className="w-[335px] h-full bg-[#06082E] relative custom-clip z-10">
-        <div className="absolute top-[4px] left-[68px] w-[149px] h-[109px]">
+      <Link href="/" passHref><div className="absolute top-[-14px] left-[68px] w-[149px] h-[900px]">
           <Image
-            src="/images/logo.png"
+            src="/images/Yacht Intl(Poseidon Navi) Logo (1).png"
             alt="Yacht Logo"
             width={149}
-            height={109}
+            height={110}
             priority
           />
-        </div>
+        </div></Link>
       </div>
 
       {/* Top navbar section */}

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <section className="flex flex-col items-center justify-center gap-[100px]">
+    <section className="flex flex-col items-center bg-white justify-center gap-[100px]">
       <MainSection />
       <StayTouch />
       <VisitOffice />

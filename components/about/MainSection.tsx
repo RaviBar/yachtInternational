@@ -7,7 +7,7 @@ const MainSection = () => {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={BgSection}
-          alt="Gallery Background"
+          alt="About Us Background"
           fill
           className="object-cover"
           priority
@@ -17,10 +17,10 @@ const MainSection = () => {
       <div className="absolute inset-0 bg-[#0A0834D1]"></div>
       <div className="relative z-10 text-center">
         <h1 className="text-[40px] uppercase text-headingText font-oswald font-medium">
-          Gallery
+        ABOUT US
         </h1>
         <h2 className="font-montserrat text-[18px] text-headingText">
-          Home {">"} Gallery
+          Home {">"} About
         </h2>
       </div>
     </div>

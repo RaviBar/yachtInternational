@@ -2,8 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
-import AppPromoSection from "@/components/AppPromoSection";
-import Footer from '@/components/Footer';
+import FooterWithPromo from "@/components/FooterWtihPromo";
 import { Hind_Guntur, Montserrat, Oswald } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 const hindGuntur = Hind_Guntur({subsets: ['latin'],weight: ['300', '400', '500', '600', '700'],})
@@ -25,8 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         <main>{children}</main>
-        <AppPromoSection />
-        <Footer />
+        <FooterWithPromo />
       </body>
     </html>
   );

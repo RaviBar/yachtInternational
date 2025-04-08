@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const GalleryHead = () => {
+const FleetsHead = () => {
   return (
     <div className="text-start flex items-center justify-center flex-col">
       <motion.h1
@@ -12,7 +12,7 @@ const GalleryHead = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-       Explore Collection
+       Explore Our Fleets
       </motion.h1>
       <span className="absolute left-1/2 -translate-x-1/2 -bottom-[2px] w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-110 transition-transform origin-center"></span>
       <motion.p
@@ -28,4 +28,4 @@ const GalleryHead = () => {
   );
 };
 
-export default GalleryHead;
+export default FleetsHead;

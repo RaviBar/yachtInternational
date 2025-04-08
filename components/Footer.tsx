@@ -1,21 +1,20 @@
 import React from "react";
-import Logo from "../public/images/logo.png";
+import Logo from "../public/images/Yacht Intl(Poseidon Navi) Logo (1).png";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-
+const navItems = [
+  { name: "HOME", path: "/" },
+  { name: "OUR FLEETS", path: "/our-fleets" },
+  { name: "GALLERY", path: "/gallery" },
+  { name: "ABOUT US", path: "/about" },
+];
 const Footer = () => {
   return (
     <footer 
-      className="bg-[#0C0836]" 
-      style={{
-        width: ' 100%',
-        height: '420px',
-        padding: '100px 0px 20px',
-        position: 'absolute',
-      }}
+      className="bg-[#010725] w-full pt-[120px] pb-[20px]"
     >
       {/* Main Content Container */}
       <div 
@@ -28,16 +27,19 @@ const Footer = () => {
         }}
       >
         {/* Left Column */}
-        <div style={{ width: '430px' }}>
+        <div className="flex flex-col items-center" style={{ width: '430px' }}>
           <Image 
             src={Logo} 
-            width={160}
-            height={350}
+            width={200}
+            height={420}
             alt="Yacht International Logo"
-            className="mb-8"
+            className="mb-2" // Reduced margin-bottom since we're adding text right below
           />
+          <p className="text-sm text-gray-200 mt-2">
+            Powered by <a href="https://www.linkedin.com/company/105706946"><span className="underline">Digimarks Solutions</span></a>
+          </p>
         </div>
-
+        {/* <div className="font-montserrat mt-6 text-bodyText  font-normal text-[15px] md:text-[16px] max-w-[270px] w-full">Powered by<a href="https://www.linkedin.com/company/digimarksolutionsbiz/"><span className="underline text-bodyText hover:text-primary cursor-pointer">Digimark Solutions</span></a></div> */}
         <div className="flex gap-[35px]" style={{ width: '850px' }}>
           {/* Contact Column */}
           <div style={{ width: '293px' }}>
@@ -63,11 +65,15 @@ Singapore 079903
           <div style={{ width: '100px' }}>
             <h3 className="text-white font-montserrat font-medium text-[16px] mb-4">Links</h3>
             <div className="text-white text-[15px] space-y-3">
-              {['Home', 'Services', 'About Us', 'Blogs'].map((item) => (
-                <Link key={item} href="#" className="block hover:opacity-75">
-                  {item}
-                </Link>
-              ))}
+              {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.path}
+                className="relative block group text-white text-sm"
+              >
+                {item.name}
+              </Link>
+            ))}
             </div>
           </div>
 
@@ -75,8 +81,8 @@ Singapore 079903
           <div style={{ width: '144px' }}>
             <h3 className="text-white font-montserrat font-medium text-[16px] mb-4">Support</h3>
             <div className="text-white text-[15px] space-y-3">
-              {['Privacy Policy', 'Help & Support', 'Terms & Conditions', 'Sitemap'].map((item) => (
-                <Link key={item} href="#" className="block hover:opacity-75">
+              {['Privacy Policy'].map((item) => (
+                <Link key={item} href="privacy-policy" className="block hover:opacity-75">
                   {item}
                 </Link>
               ))}
@@ -108,7 +114,7 @@ Singapore 079903
       {/* Divider */}
       <hr 
         style={{
-          border: '0.5px solid #DDDDDE',
+          border: '0.2px solid #DDDDDE',
           width: '100%',
           margin: '0 auto 24px', 
         }}
@@ -124,7 +130,7 @@ Singapore 079903
         }}
       >
         <div 
-          className="text-center"
+          className="text-center" 
           style={{
             fontFamily: 'Hind Guntur',
             fontWeight: 400,

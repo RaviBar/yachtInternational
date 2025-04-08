@@ -2,7 +2,7 @@ import React from "react";
 
 const AddressMap = () => {
   return (
-    <section className="flex flex-col md:flex-row gap-10 justify-between max-w-7xl w-full">
+    <section className="flex flex-col md:flex-row gap-10 mb-8 justify-between max-w-7xl w-full">
       {/* Left Map - Now with equal width */}
       <div className="flex flex-col gap-10 w-full md:w-[calc(50%-20px)]">
         <div className="flex flex-col gap-6">

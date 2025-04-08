@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 const AppPromoSection = () => {
   return (
-    <div className="relative z-10 mt-[140px]">
+    <div className="relative z-10">
       <div
         className="bg-[#0057EB] w-[1062px] h-[266px] mx-auto text-white text-center px-6 flex flex-col items-center justify-center gap-6"
         style={{
@@ -19,7 +19,7 @@ const AppPromoSection = () => {
         <Link href="https://wa.me/+6598256032" passHref legacyBehavior>
               <a target="_blank" rel="noopener noreferrer">
               <button className="border border-white px-4 py-2 text-sm hover:bg-white hover:text-[#0057EB] transition rounded">
-          Open Our App
+          Get in touch with us
         </button></a>
         </Link>
       </div>
