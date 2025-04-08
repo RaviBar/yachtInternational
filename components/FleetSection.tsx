@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const fleets = [
   {
@@ -99,9 +100,10 @@ const FleetSection = () => {
                 </div>
 
                 {/* View More Button */}
+                <Link href="/our-fleets" passHref>
                 <button className="mt-auto bg-transparent border-2 border-blue-600 text-blue-600 px-8 py-2 rounded hover:bg-blue-600 hover:text-white transition-colors duration-300 font-medium">
                   View More
-                </button>
+                </button></Link>
               </div>
             </div>
           ))}
@@ -109,9 +111,10 @@ const FleetSection = () => {
 
         {/* View All Button */}
         <div className="text-center">
-          <button className="bg-blue-600 text-white px-10 py-3 rounded hover:bg-blue-700 transition-colors duration-300 font-medium text-lg">
+        <Link href="/our-fleets" passHref>
+        <button className="bg-blue-600 text-white px-10 py-3 rounded hover:bg-blue-700 transition-colors duration-300 font-medium text-lg">
             View All Fleets
-          </button>
+          </button></Link>
         </div>
       </div>
     </section>

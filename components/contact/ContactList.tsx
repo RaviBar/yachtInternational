@@ -40,8 +40,8 @@ const contactCardData: ContactCardItem[] = [
     bodyText: "Give us a call or email to explore the possibilities and start a meaningful partnership.",
     bodyFont: "font-hind-guntur",
     links: [
-      { text: "+ 65 69703884 ", url: "" },
-      { text: "singapore.office@yacht-intl.com", url: "mailto:singapore.office@yacht-intl.com" }
+      { text: "+ 65 69703884 ", url: "tel:+6569703884", linkFont: "font-montserrat" },
+      { text: "singapore.office@yacht-intl.com", url: "mailto:singapore.office@yacht-intl.com", linkFont: "font-montserrat" }
     ],
     iconBgColor: "",
   },
@@ -77,7 +77,7 @@ const ContactList = () => {
             <h3 className="text-[20px] text-headingText font-medium font-oswald">
               Chat with us
             </h3>
-            <Link href="https://wa.me/9885368644" passHref legacyBehavior>
+            <Link href="https://wa.me/+6598256032" passHref legacyBehavior>
               <a target="_blank" rel="noopener noreferrer">
                 <button
                   className="max-w-[192px] px-4 bg-[#25D366] text-[18px] text-white font-montserrat font-medium w-full h-[50px]"

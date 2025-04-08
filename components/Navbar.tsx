@@ -3,7 +3,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-
+const navItems = [
+  { name: "HOME", path: "/" },
+  { name: "OUR FLEETS", path: "/our-fleets" },
+  { name: "GALLERY", path: "/gallery" },
+  { name: "ABOUT US", path: "/about-us" },
+  { name: "PRESS RELEASES", path: "/press-releases" }
+];
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("singapore");
@@ -13,7 +19,7 @@ const Navbar = () => {
       code: "singapore",
       name: "Singapore",
       flag: "/images/flags/singapore.webp",
-      url: "https://www.yacht-intl.com.sg/"
+      url: "https://yacht-intl.sg/"
     },
     {
       code: "uae",
@@ -97,19 +103,17 @@ const Navbar = () => {
       {/* Bottom navbar section */}
       <div className="absolute top-[49px] left-[375px] right-0 h-[64px] flex items-center justify-between px-4 bg-white">
       <div className="flex space-x-8 font-oswald">
-        {['HOME', 'OUR FLEETS', 'GALLERY', 'ABOUT US', 'PRESS RELEASES'].map((item) => (
-          <Link
-            key={item}
-            href="#"
-            className="relative group text-[#06082E] text-sm font-semibold"
-          >
-            {item}
-            <span
-    className="absolute left-1/2 -translate-x-1/2 -bottom-[2px] w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-110 transition-transform origin-center"
-  ></span>
-          </Link>
-        ))}
-      </div>
+      {navItems.map((item) => (
+        <Link
+          key={item.name}
+          href={item.path}
+          className="relative group text-[#06082E] text-sm font-semibold"
+        >
+          {item.name}
+          <span className="absolute left-1/2 -translate-x-1/2 -bottom-[2px] w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-110 transition-transform origin-center"></span>
+        </Link>
+      ))}
+    </div>
 
       <div className="flex items-center space-x-4 relative">
         {/* Flag Dropdown */}

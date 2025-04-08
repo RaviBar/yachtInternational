@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+import Link from "next/link";
 const AppPromoSection = () => {
   return (
     <div className="relative z-10 mt-[140px]">
@@ -14,11 +14,14 @@ const AppPromoSection = () => {
           Experience Yacht International on the Go
         </h2>
         <p className="text-base font-oswald">
-          Manage bookings, track fleets, and stay connected anytime.
+        Exclusive Access to Smarter Shipping – Manage Fleets & Book Seamlessly
         </p>
-        <button className="border border-white px-4 py-2 text-sm hover:bg-white hover:text-[#0057EB] transition rounded">
+        <Link href="https://wa.me/+6598256032" passHref legacyBehavior>
+              <a target="_blank" rel="noopener noreferrer">
+              <button className="border border-white px-4 py-2 text-sm hover:bg-white hover:text-[#0057EB] transition rounded">
           Open Our App
-        </button>
+        </button></a>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Globe, { GlobeMethods } from 'react-globe.gl'; 
+import Link from 'next/link';
 
 
 type MarkerData = {
@@ -92,9 +93,10 @@ const handlePointHover = (point: object | null) => {
             more regions each year, ensuring our customers can reach us with ease.
           </p>
           <div className="max-w-2xl">
-            <button className="px-6 py-3 bg-blue-600 text-white uppercase font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">
+          <Link href="/contact" passHref>
+          <button className="px-6 py-3 bg-blue-600 text-white uppercase font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">
               Contact Us
-            </button>
+            </button></Link>
           </div>
         </div>
   

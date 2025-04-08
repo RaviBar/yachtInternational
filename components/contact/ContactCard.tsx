@@ -21,7 +21,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
   iconBgColor = "",
 }) => {
   return (
-    <div className="flex flex-col items-start text-[#212B36] bg-customGray gap-4 text-start w-full p-6 max-w-[413px] h-auto max-h-[180px] bg-bgCard transition-all duration-300">
+    <div className="flex flex-col items-start text-[#212B36] bg-customGray gap-4 text-start w-full p-6 max-w-[423px] h-auto max-h-[180px] bg-bgCard transition-all duration-300">
       {/* Icon Container */}
       <div className="flex gap-3">
         <div
@@ -42,7 +42,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
       </p>
 
       {/* Links */}
-      <div className="text-[16px] text-headingText font-montserrat font-regular flex flex-wrap gap-2">
+      <div className="text-sm text-headingText font-montserrat font-regular flex flex-row gap-4 w-full items-center" >
         {links.map((link, index) => (
           <a
             key={index}

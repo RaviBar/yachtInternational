@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-
+import Link from 'next/link';
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -48,12 +48,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col font-montserrat sm:flex-row gap-4">
-            <button className="px-6 py-3 border-2 border-white text-white uppercase hover:bg-white hover:text-black transition-all duration-300">
+          <Link href="/our-fleets" passHref><button className="px-6 py-3 border-2 border-white text-white uppercase hover:bg-white hover:text-black transition-all duration-300">
               Explore Our Fleets
-            </button>
+            </button></Link>
+            <Link href="/contact" passHref>
             <button className="px-6 py-3 bg-blue-600 text-white uppercase hover:bg-white hover:text-blue-600 transition-all duration-300">
               Contact Us
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

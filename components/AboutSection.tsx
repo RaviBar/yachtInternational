@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 
 const AboutSection = () => {
   return (
@@ -34,9 +34,9 @@ const AboutSection = () => {
               Our skilled teams and fleet of crew & supply vessels serve over [insert number] clients
               with personnel transfer, cargo support, and anchorage services.
             </p>
-            <button className="border border-blue-600 text-gray-700 px-6 py-2 rounded hover:bg-blue-600 hover:text-white transition">
+            <Link href="/about" passHref><button className="border border-blue-600 text-gray-700 px-6 py-2 rounded hover:bg-blue-600 hover:text-white transition">
               KNOW MORE
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
