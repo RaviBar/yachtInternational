@@ -14,8 +14,8 @@ const MainSection = () => {
           quality={100}
         />
       </div>
-      <div className="absolute inset-0 bg-[#0A0834D1]"></div>
-      <div className="relative z-10 text-center">
+      
+      <div className="relative z-10 text-center text-white">
         <h1 className="text-[40px] uppercase text-headingText font-oswald font-medium">
         ABOUT US
         </h1>
@@ -23,6 +23,7 @@ const MainSection = () => {
           Home {">"} About
         </h2>
       </div>
+      <div className="absolute inset-0 bg-[#0A0834D1]"></div>
     </div>
   );
 };
