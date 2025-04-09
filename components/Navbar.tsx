@@ -126,7 +126,6 @@ const Navbar = () => {
           className="flex items-center space-x-2 px-4 py-2 w-full hover:bg-gray-100 text-left"
           onClick={(e) => {
             e.preventDefault();
-            setSelectedCountry(country.code);
             setDropdownOpen(false);
             setTimeout(() => window.open(country.url, '_blank', 'noopener,noreferrer'), 100);
           }}
