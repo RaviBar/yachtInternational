@@ -23,7 +23,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 1",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha1.webp",
+    image: "/images/Fleetcard/yacht-alpha1.webp",
     specs: {
       grt: "22 Tones",
       length: "13.23 M",
@@ -37,7 +37,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 2",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha2.webp",
+    image: "/images/Fleetcard/yacht-alpha2.webp",
     specs: {
       grt: "22 Tones",
       length: "13.23 M",
@@ -51,7 +51,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 11",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha11.webp",
+    image: "/images/Fleetcard/yacht-alpha11.webp",
     specs: {
       grt: "23 Tones",
       length: "11.98 M",
@@ -65,7 +65,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 22",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha22.webp",
+    image: "/images/Fleetcard/yacht-alpha22.webp",
     specs: {
       grt: "28.7 Tones",
       length: "12.4 M",
@@ -79,7 +79,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 33",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha33.webp",
+    image: "/images/Fleetcard/yacht-alpha33.webp",
     specs: {
       grt: "23 Tones",
       length: "16.0 M",
@@ -93,7 +93,7 @@ const yachts: YachtData[] = [
     name: "Yacht Alpha 44",
     type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
-    image: "/images/FleetCard/yacht-alpha44.webp",
+    image: "/images/Fleetcard/yacht-alpha44.webp",
     specs: {
       grt: "25 Tones",
       length: "12.8 M",
