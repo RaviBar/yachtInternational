@@ -94,7 +94,7 @@ const FleetSection = () => {
                     { label: "BREADTH", value: fleet.specs.breadth },
                     { label: "DEPTH", value: fleet.specs.depth },
                     { label: "SPEED", value: fleet.specs.speed },
-                    { label: "", value: "" }
+                    { label: "TYPE", value: "Aluminium Launch" }
                   ].map((spec, i) => (
                     <div
                       key={i}

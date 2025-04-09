@@ -34,7 +34,7 @@ We are sincerely grateful for the continued support and enthusiasm from the Sing
         <div className="flex flex-wrap gap-4 items-center mb-4">
           <div className="flex items-center text-gray-500 text-sm">
             <FiCalendar className="mr-2" />
-            21 Mar 2025
+            27 July 2023
           </div>
 
           <div className="flex items-center space-x-1 bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
@@ -47,7 +47,7 @@ We are sincerely grateful for the continued support and enthusiasm from the Sing
             >
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
             </svg>
-            <span>Shipping</span>
+            <span>Pan Pacific Hotel, Singapore</span>
           </div>
         </div>
 

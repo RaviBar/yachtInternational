@@ -37,7 +37,7 @@ const Navbar = () => {
   const handleCountrySelect = (country: typeof countries[number]) => {
     setSelectedCountry(country.code);
     setDropdownOpen(false);
-    window.location.href = country.url;
+    window.open(country.url, '_blank');
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -102,48 +102,47 @@ const Navbar = () => {
           </div>
 
           <div className="flex space-x-4 items-center">
-          <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={toggleDropdown}
-                className="flex items-center space-x-2 border px-3 py-1 rounded-sm hover:bg-gray-700"
-                aria-expanded={dropdownOpen}
-              >
-                {currentCountry && (
-                  <Image 
-                    src={currentCountry.flag} 
-                    alt={currentCountry.name}
-                    width={24} 
-                    height={16} 
-                  />
-                )}
-              </button>
+<div className="relative" ref={dropdownRef}>
+  <button
+    onClick={toggleDropdown}
+    className="flex items-center space-x-2 border px-3 py-1 rounded-sm hover:bg-gray-700"
+    aria-expanded={dropdownOpen}
+  >
+    {currentCountry && (
+      <Image 
+        src={currentCountry.flag} 
+        alt={currentCountry.name}
+        width={24} 
+        height={16} 
+      />
+    )}
+  </button>
 
-              {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-55 bg-gray-100 border rounded shadow-xl z-50">
-                  {countries.map((country) => (
-                    <a
-                      key={country.code}
-                      href={country.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 px-4 py-2 w-full hover:bg-gray-100"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleCountrySelect(country);
-                      }}
-                    >
-                      <Image 
-                        src={country.flag} 
-                        alt={country.name}
-                        width={24} 
-                        height={16} 
-                      />
-                      <span className="text-sm text-[#06082E]">{country.name}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+  {dropdownOpen && (
+    <div className="absolute right-0 mt-2 w-55 bg-gray-100 border rounded shadow-xl z-50">
+      {countries.map((country) => (
+        <button
+          key={country.code}
+          className="flex items-center space-x-2 px-4 py-2 w-full hover:bg-gray-100 text-left"
+          onClick={(e) => {
+            e.preventDefault();
+            setSelectedCountry(country.code);
+            setDropdownOpen(false);
+            setTimeout(() => window.open(country.url, '_blank', 'noopener,noreferrer'), 100);
+          }}
+        >
+          <Image 
+            src={country.flag} 
+            alt={country.name}
+            width={24} 
+            height={16} 
+          />
+          <span className="text-sm text-[#06082E]">{country.name}</span>
+        </button>
+      ))}
+    </div>
+  )}
+</div>
             <a href="https://www.facebook.com/yachtintl/" aria-label="Facebook">
               <Image src="/icons/facebook.svg" alt="Facebook" width={12} height={12} />
             </a>
