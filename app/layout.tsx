@@ -23,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${hindGuntur.className} ${montserrat.className} ${oswald.className}`}>
       <body className={inter.className}>
+        <div className='overflow-x-hidden'>
         <Navbar />
         <main>{children}</main>
         <WhatsAppButton/>
         <FooterWithPromo />
+        </div>
       </body>
     </html>
   );

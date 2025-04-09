@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-
+import FlagDropdown from "./FlagDropdown";
 const navItems = [
   { name: "HOME", path: "/" },
   { name: "OUR FLEETS", path: "/our-fleets" },
@@ -13,59 +13,14 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  // Dropdown state for country flag selection (common for all views)
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("singapore");
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const countries = [
-    {
-      code: "singapore",
-      name: "Singapore",
-      flag: "/images/flags/singapore.webp",
-      url: "https://yacht-intl.sg/"
-    },
-    {
-      code: "uae",
-      name: "United Arab Emirates",
-      flag: "/images/flags/united-arab-emirates.webp",
-      url: "https://www.yacht-intl.com/"
-    }
-  ];
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-
-
-  const handleCountrySelect = (country: typeof countries[number]) => {
-    setSelectedCountry(country.code);
-    setDropdownOpen(false);
-    window.open(country.url, '_blank');
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as Node | null;
-    if (dropdownRef.current && !dropdownRef.current.contains(target)) {
-      setDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const currentCountry = countries.find(c => c.code === selectedCountry) ?? countries[0];
-
-  // MOBILE SIDEBAR STATE: only used on mobile/tablet
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
   return (
     <>
       {/* Desktop Navbar */}
       <nav className="hidden z-50 md:flex w-full max-w-full h-[117px] relative bg-white mx-auto">
-        {/* Left Logo Section (Desktop) */}
         <div className="w-[335px] h-full bg-[#06082E] relative custom-clip z-10">
           <Link href="/" passHref>
             <div className="absolute top-[-14px] left-[68px] w-[149px] h-[900px]">
@@ -95,53 +50,14 @@ const Navbar = () => {
                 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
               </svg>
               <span>
-                10 Anton Road, International Plaza, Singapore 079903
+                10 Anson Road, International Plaza, Singapore 079903
               </span>
             </div>
             <span>Email: singapore.office@yacht-intl.com</span>
           </div>
 
           <div className="flex space-x-4 items-center">
-<div className="relative" ref={dropdownRef}>
-  <button
-    onClick={toggleDropdown}
-    className="flex items-center space-x-2 border px-3 py-1 rounded-sm hover:bg-gray-700"
-    aria-expanded={dropdownOpen}
-  >
-    {currentCountry && (
-      <Image 
-        src={currentCountry.flag} 
-        alt={currentCountry.name}
-        width={24} 
-        height={16} 
-      />
-    )}
-  </button>
-
-  {dropdownOpen && (
-    <div className="absolute right-0 mt-2 w-55 bg-gray-100 border rounded shadow-xl z-50">
-      {countries.map((country) => (
-        <button
-          key={country.code}
-          className="flex items-center space-x-2 px-4 py-2 w-full hover:bg-gray-100 text-left"
-          onClick={(e) => {
-            e.preventDefault();
-            setDropdownOpen(false);
-            setTimeout(() => window.open(country.url, '_blank', 'noopener,noreferrer'), 100);
-          }}
-        >
-          <Image 
-            src={country.flag} 
-            alt={country.name}
-            width={24} 
-            height={16} 
-          />
-          <span className="text-sm text-[#06082E]">{country.name}</span>
-        </button>
-      ))}
-    </div>
-  )}
-</div>
+          <FlagDropdown />
             <a href="https://www.facebook.com/yachtintl/" aria-label="Facebook">
               <Image src="/icons/facebook.svg" alt="Facebook" width={12} height={12} />
             </a>
@@ -205,47 +121,11 @@ const Navbar = () => {
 >
   <div className="flex justify-end items-center mb-4 space-x-4">
     {/* Flag Selector */}
-    <div ref={dropdownRef} className="relative">
-      <button
-        onClick={toggleDropdown}
-        className="mt-4 flex items-center gap-2 border px-4 py-2 rounded-md bg-gray-900"
-      >
-        <Image
-          src={currentCountry.flag}
-          alt={currentCountry.name}
-          width={20}
-          height={20}
-        />
-      </button>
-
-      {dropdownOpen && (
-        <ul className="absolute left-0 mt-2 w-48 bg-gray-100 border shadow-xl rounded z-50">
-          {countries.map((country) => (
-            <li
-              key={country.code}
-              onClick={() => handleCountrySelect(country)}
-              className="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-gray-100"
-            >
-              <Image
-                src={country.flag}
-                alt={country.name}
-                width={20}
-                height={20}
-              />
-              <span className="text-sm text-[#06082E]">{country.name}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  {/* Close Icon in Menu */}
-  <button onClick={toggleMobileMenu} className="text-white mt-4 ">
+    <FlagDropdown/>
+  <button onClick={toggleMobileMenu} className="text-white">
       <X size={24} />
   </button>
-      
-
   </div>
-
   {/* Nav Items */}
   <nav className="flex flex-col space-y-4 pl-3 py-2">
     {navItems.map((item) => (
@@ -278,7 +158,7 @@ const Navbar = () => {
                 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
               </svg>
               <span >
-                10 Anton Road, International Plaza, Singapore 079903
+                10 Anson Road, International Plaza, Singapore 079903
               </span>
             </div>
             <div className="flex items-center space-x-2">
@@ -293,13 +173,10 @@ const Navbar = () => {
                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"
               />
             </svg>
-
               <span>Email: singapore.office@yacht-intl.com</span>
             </div>
           </div>
-  
 </div>
-
     </>
   );
 };

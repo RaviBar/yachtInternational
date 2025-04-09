@@ -76,8 +76,8 @@ const yachts: YachtData[] = [
     specs: {
       grt: "23 Tones",
       length: "16.0 M",
-      depth: "1.8 M",
-      speed: "+-23 Knots",
+      depth: "2.20 M",
+      speed: "+-15 Knots",
       breadth: "3.9 M"
     }
   },
