@@ -25,6 +25,7 @@ const FlagDropdown = () => {
     setIsOpen(!isOpen);
   };
   const handleSelect = (country: typeof countries[number]) => {
+    setCurrentCountry(countries[0]);
     window.open(country.url);
   };
 
