@@ -42,8 +42,8 @@ const PrivacyPolicy = () => {
           <p className="mb-4">For the purposes of this Privacy Policy:</p>
           <ul className="list-disc pl-6 mb-4 space-y-2">
             <li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
-            <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
-            <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Yacht International, 10 Anton Road, International Plaza, Singapore 079903.</li>
+            <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+            <li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Yacht International, 10 Anton Road, International Plaza, Singapore 079903.</li>
             <li><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</li>
             <li><strong>Country</strong> refers to: Singapore</li>
             <li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
             Usage Data is collected automatically when using the Service.
           </p>
           <p className="mb-4">
-            Usage Data may include information such as Your Device's Internet Protocol address 
+            Usage Data may include information such as Your Device&apos;s Internet Protocol address 
             (e.g. IP address), browser type, browser version, the pages of our Service that 
             You visit, the time and date of Your visit, the time spent on those pages, unique 
             device identifiers and other diagnostic data.
@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
             </li>
           </ul>
           <p className="mb-4">
-            Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on 
+            Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on 
             Your personal computer or mobile device when You go offline, while Session Cookies 
             are deleted as soon as You close Your web browser. You can learn more about cookies 
             on <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" className="text-blue-600 hover:underline">TermsFeed website</a>.
@@ -160,7 +160,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Children's Privacy</h2>
+          <h2 className="text-2xl font-semibold mb-4">Children&apos;s Privacy</h2>
           <p className="mb-4">
             Our Service does not address anyone under the age of 13. We do not knowingly 
             collect personally identifiable information from anyone under the age of 13. 
@@ -173,7 +173,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mb-4">Links to Other Websites</h2>
           <p className="mb-4">
             Our Service may contain links to other websites that are not operated by Us. 
-            If You click on a third party link, You will be directed to that third party's 
+            If You click on a third party link, You will be directed to that third party&apos;s 
             site. We strongly advise You to review the Privacy Policy of every site You visit.
           </p>
         </section>
