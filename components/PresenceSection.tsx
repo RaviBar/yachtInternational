@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 const videos = [
@@ -17,41 +17,41 @@ const PresenceSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[611px] px-[82px] py-[60px] flex items-center overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-black ">
+    <section className="relative w-full h-[611px] md:px-[82px] px-6 py-[60px] flex md:flex-row flex-col items-center md:items-start overflow-hidden">
+      {/* Background Videos */}
+      <div className="absolute inset-0 z-0 bg-black">
         {videos.map((video, index) => (
           <video
-          key={index}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-50" : "opacity-0 pointer-events-none"
-          }`}
-            style={{
-              objectPosition: "center center",
-            }}
+            key={index}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-50" : "opacity-0 pointer-events-none"
+            }`}
+            style={{ objectPosition: "center center" }}
           >
             <source src={video} type="video/mp4" />
           </video>
         ))}
       </div>
 
-      <div className="relative z-10 w-[617px] h-auto ml-20 flex flex-col justify-start gap-[40px]">
-      <h2 className="font-oswald font-medium text-[38px] leading-[39px] tracking-[-0.04em] text-white">
-  SINGAPORE PRESENCE
-</h2>
+      {/* Text Content */}
+      <div className="relative z-10 md:ml-10  w-full md:w-[617px] flex flex-col p-12 gap-[40px]">
+        <h2 className="font-oswald font-medium text-[32px] md:text-[38px] leading-[39px] tracking-[-0.04em] text-white">
+          SINGAPORE PRESENCE
+        </h2>
 
-        <div className="w-[618px] font-Hind Guntur font-normal h-auto flex flex-col gap-[24px]">
-          <p className="text-[17px] leading-[24px] tracking-[0.01em] text-white">
+        <div className="font-Hind Guntur font-normal flex flex-col gap-[24px] text-white text-justify">
+          <p className="text-[16px] md:text-[17px] leading-[24px] tracking-[0.01em]">
             With over two decades of global shipping expertise, we confidently expanded into Singapore, establishing a reputable subsidiary and group of companies.
           </p>
-          <p className="h-[72px]  text-[17px] leading-[24px] tracking-[0.01em] text-white">
-            With its prime location along major trade routes and world-class port infrastructure, Singapore serves as a vital global maritime hub—making it the ideal base for our regional expansion and service delivery.
+          <p className="text-[16px] md:text-[17px] leading-[24px] tracking-[0.01em]">
+          With its prime location along major trade routes and world-class port infrastructure, Singapore serves as a vital global maritime hub—making it the ideal base for our regional expansion and service delivery.
           </p>
-          <p className="h-[72px] text-[17px] leading-[24px] tracking-[0.01em] text-white">
-            In Singapore, we focus on crew and cargo operations, leveraging technology and digital innovations to enhance efficiency and strengthen our maritime leadership
+          <p className="text-[16px] md:text-[17px] leading-[24px] tracking-[0.01em]">
+          In Singapore, we focus on crew and cargo operations, leveraging technology and digital innovations to enhance efficiency and strengthen our maritime leadership.
           </p>
         </div>
       </div>

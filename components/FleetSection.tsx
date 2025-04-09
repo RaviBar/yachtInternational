@@ -1,11 +1,12 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const fleets = [
   {
     type: "UTILITY BOAT",
     name: "Yacht Alpha 1",
-    material: "Aluminium-Launch",
     image: "/images/Fleetcard/yacht-alpha1.webp",
     specs: {
       grt: "22 Tones",
@@ -18,7 +19,6 @@ const fleets = [
   {
     type: "CREW BOAT",
     name: "Yacht Alpha 2",
-    material: "Aluminium-Launch",
     image: "/images/Fleetcard/yacht-alpha2.webp",
     specs: {
       grt: "22 Tones",
@@ -31,7 +31,6 @@ const fleets = [
   {
     type: "CREW BOAT",
     name: "Yacht Alpha 11",
-    material: "Aluminium-Launch",
     image: "/images/Fleetcard/yacht-alpha11.webp",
     specs: {
       grt: "23 Tones",
@@ -45,19 +44,29 @@ const fleets = [
 
 const FleetSection = () => {
   return (
-    <section className="py-20 px-4 bg-[#f8f9fa]">
+    <section className="py-15 px-4 bg-[#f8f9fa]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-oswald font-bold mb-4 text-blue-600 mb-12">OUR FLEETS</h2>
+       {/* Animated Heading and Description */}
+       <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-oswald font-bold text-blue-600 mb-4">
+            OUR FLEETS
+          </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Charter boats with crew: we offer 24 x 7 charter services for crew and cargo,
             complete with experienced and skilled crews to ensure safe and efficient operations.
           </p>
-        </div>
+        </motion.div>
         
         <div className="grid grid-cols-1 font-oswald md:grid-cols-3 gap-[42px] mb-12">
           {fleets.map((fleet, idx) => (
-            <div key={idx} className="overflow-hidden shadow-md relative" style={{ width: '405px', height: '677px' }}>
+            <div key={idx} className="flex justify-center md:justify-start">
+            <div className="overflow-hidden shadow-md relative" style={{ width: '405px', height: '677px' }}>
               {/* Image */}
                 <div className="relative h-[300px] w-full">
                   <Image 
@@ -76,7 +85,6 @@ const FleetSection = () => {
               {/* Content Area */}
               <div className="pt-10 pb-6 px-4 flex flex-col items-center text-center text-black h-[377px]">
                 <h3 className="text-lg font-bold mb-2">{fleet.name}</h3>
-                <p className="text-sm text-gray-600 mb-6">{fleet.material}</p>
 
                 {/* Specs Grid */}
                 <div className="grid grid-cols-3 w-full text-sm text-center border-t border-gray-200 mb-6">
@@ -106,17 +114,25 @@ const FleetSection = () => {
                 </button></Link>
               </div>
             </div>
+            </div>
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center">
-        <Link href="/our-fleets" passHref>
-        <button className="bg-blue-600 text-white px-10 py-3 rounded hover:bg-blue-700 transition-colors duration-300 font-medium text-lg">
-            View All Fleets
-          </button></Link>
         </div>
-      </div>
+        {/* View All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Link href="/our-fleets">
+            <div className="inline-block px-6 py-3 bg-blue-600 text-white uppercase font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 border border-blue-600 rounded">
+              View More
+            </div>
+          </Link>
+        </motion.div>
     </section>
   );
 };

@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-
 interface YachtData {
   id: string;
   name: string;
-  type: string;
   description: string;
   image: string;
   specs: {
@@ -21,7 +19,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-1",
     name: "Yacht Alpha 1",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha1.webp",
     specs: {
@@ -35,7 +32,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-2",
     name: "Yacht Alpha 2",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha2.webp",
     specs: {
@@ -49,7 +45,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-11",
     name: "Yacht Alpha 11",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha11.webp",
     specs: {
@@ -63,7 +58,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-22",
     name: "Yacht Alpha 22",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha22.webp",
     specs: {
@@ -77,7 +71,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-33",
     name: "Yacht Alpha 33",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha33.webp",
     specs: {
@@ -91,7 +84,6 @@ const yachts: YachtData[] = [
   {
     id: "alpha-44",
     name: "Yacht Alpha 44",
-    type: "Aluminium-Launch",
     description: "A high-speed aluminium launch vessel designed for efficient crew and cargo transport. Built for durability and performance, it ensures safe, reliable operations in demanding maritime environments.",
     image: "/images/Fleetcard/yacht-alpha44.webp",
     specs: {
@@ -107,57 +99,42 @@ const yachts: YachtData[] = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white py-12">
-      <div className="max-w-[1280px] mx-auto space-y-8">
-        {yachts.map((yacht) => (
-          <div 
-            key={yacht.id} 
-            className="overflow-hidden bg-white border border-gray-200 rounded-lg shadow-sm"
-          >
-            <div className="flex flex-col lg:flex-row h-[427px]">
-              <div className="w-full lg:w-[405px] h-[427px] relative">
-                <Image
-                  src={yacht.image}
-                  alt={yacht.name}
-                  width={80}
-                  height={80}
-                  className="absolute inset-0 w-full h-full object-cover"
+      <div className="grid grid-cols-1 font-oswald md:grid-cols-3 gap-[42px] mb-16">
+        {yachts.map((fleet, idx) => (
+          <div key={idx} className="overflow-hidden shadow-xl relative" style={{ width: '405px', height: '589px' }}>
+            {/* Image */}
+              <div className="relative h-[300px] w-full">
+                <Image 
+                  src={fleet.image} 
+                  alt={fleet.name} 
+                  fill 
+                  className="object-cover" 
                 />
               </div>
-              <div className="flex-1 p-8 mt-[31px] ml-[62px] max-w-[769px]">
-                <div className="space-y-10">
-                  <div>
-                    <h2 className="text-3xl font-bold text-gray-900">{yacht.name}</h2>
-                    <p className="mt-2 text-lg font-medium text-[#666D80]">{yacht.type}</p>
+
+            {/* Content Area */}
+            <div className="pt-10 pb-6 px-4 flex flex-col items-center text-center text-black h-[377px]">
+              <h3 className="text-lg font-bold mb-2">{fleet.name}</h3>
+
+              {/* Specs Grid */}
+              <div className="grid grid-cols-3 w-full text-sm text-center border-t border-gray-200 mb-6">
+                {[
+                  { label: "GRT", value: fleet.specs.grt },
+                  { label: "LENGTH", value: fleet.specs.length },
+                  { label: "BREADTH", value: fleet.specs.breadth },
+                  { label: "DEPTH", value: fleet.specs.depth },
+                  { label: "SPEED", value: fleet.specs.speed },
+                  { label: "", value: "" }
+                ].map((spec, i) => (
+                  <div
+                    key={i}
+                    className={`py-3 px-2 flex flex-col items-center justify-center 
+                      ${i % 3 !== 2 ? "border-r border-gray-300" : ""}`}
+                  >
+                    <span className="text-sm font-medium mb-2">{spec.label}</span>
+                    <span className="text-xs font-medium text-gray-500">{spec.value}</span>
                   </div>
-
-                  <p className="text-[#636363] leading-relaxed max-w-[769px]">
-                    {yacht.description}
-                  </p>
-
-                  <div className="grid grid-cols-5 gap-x-4">
-                    <div>
-                      <h3 className="text-sm font-medium text-[#000000]">GRT</h3>
-                      <p className="mt-1 text-base text-[#666D80]">{yacht.specs.grt}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-[#000000]">LENGTH</h3>
-                      <p className="mt-1 text-base text-[#666D80]">{yacht.specs.length}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">DEPTH</h3>
-                      <p className="mt-1 text-base text-gray-600">{yacht.specs.depth}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">SPEED</h3>
-                      <p className="mt-1 text-base text-gray-600">{yacht.specs.speed}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">BREADTH</h3>
-                      <p className="mt-1 text-base text-gray-600">{yacht.specs.breadth}</p>
-                    </div>
-                  </div>
-
-                </div>
+                ))}
               </div>
             </div>
           </div>

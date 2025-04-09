@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Globe, { GlobeMethods } from 'react-globe.gl';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface CountryData {
   lat: number;
@@ -18,11 +19,11 @@ const GlobeComponent: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const countries: CountryData[] = [
-    { lat: 25.276987, lng: 55.296249, name: 'UAE', address: 'Business Bay, Tower 2, Dubai, UAE', flag: '/images/flags/uae.svg' },
+    { lat: 25.17572844232324, lng: 56.35128584157686, name: 'UAE', address: 'MMFS Tower - MINA ROAD - 5th Floor - opp. Fujairah Sea Port - Fujairah', flag: '/images/flags/uae.svg' },
     { lat: 1.352083, lng: 103.819836, name: 'Singapore', address: '10 Anton Road, International Plaza, Singapore', flag: '/images/flags/singapore.svg' },
-    { lat: 21.473532, lng: 55.975413, name: 'Oman', address: 'Al Khuwair, Muscat, Oman', flag: '/images/flags/oman.svg' },
-    { lat: 37.983810, lng: 23.727539, name: 'Greece', address: 'Leof. Vasilissis Sofias, Athens, Greece', flag: '/images/flags/greece.svg' },
-    { lat: 20.593684, lng: 78.962880, name: 'India', address: 'Nariman Point, Mumbai, India', flag: '/images/flags/india.svg' },
+    { lat: 21.436756033148278, lng: 56.60581605434562 , name: 'Oman', address: 'YACHT GLOBAL SHIPPING SERVICES LLC 3rd Floor, Office No: 34 PO BOX: 76,Falaj Al Qabail Sohar, Sultanate of Oman', flag: '/images/flags/oman.svg' },
+    { lat: 37.83456409805637, lng: 23.803241973016355 , name: 'Greece', address: 'Vari, Greece', flag: '/images/flags/greece.svg' },
+    { lat: 13.07259682693638, lng: 80.25542289525961, name: 'India', address: 'Halls Towers, Egmore, Tamil Nadu-600008, India', flag: '/images/flags/india.svg' },
   ];
 
   useEffect(() => {
@@ -55,12 +56,15 @@ const GlobeComponent: React.FC = () => {
 
   const handleFlagLeave = () => {
     setShowTooltip(false);
+    setHoveredCountry(null);
     
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
     }
   };
-
+  const handleContainerMouseLeave = () => {
+    handleFlagLeave();
+  };
   const renderFlag = (d: object) => {
     const country = d as CountryData;
     const div = document.createElement('div');
@@ -91,24 +95,32 @@ const GlobeComponent: React.FC = () => {
   };
 
   return (
-    <section className="relative flex justify-between items-center bg-[#0A0834] w-full px-[100px] h-[557px] overflow-hidden">
-      <div className="flex flex-col justify-between w-[587px] h-[255px] text-white">
-        <h2 className="text-4xl font-oswald text-[#F36224] font-bold mb-6">
-          SERVING BEYOND BORDERS
-        </h2>
-        <p className="text-md mb-6">
-          The Yacht team understands the importance of effective communication and
-          accessibility. That&apos;s why we continue to expand, establishing new offices in
-          more regions each year, ensuring our customers can reach us with ease.
-        </p>
-        <div className="max-w-2xl">
-          <Link href="/contact" passHref>
-            <button className="px-6 py-3 bg-blue-600 text-white uppercase font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">
-              CONTACT US
-            </button>
-          </Link>
-        </div>
+    <section className="relative flex flex-col-reverse md:flex-row justify-between items-center bg-[#0A0834] w-full px-6 md:px-[100px] overflow-hidden"
+    onMouseLeave={handleContainerMouseLeave} 
+    >
+      <motion.div
+      className="flex flex-col justify-between w-full md:w-[587px] text-white mb-10 md:mb-0"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl font-oswald text-[#F36224] font-bold mb-6">
+        SERVING BEYOND BORDERS
+      </h2>
+      <p className="text-md mb-6">
+        The Yacht team understands the importance of effective communication and
+        accessibility. That&apos;s why we continue to expand, establishing new offices in
+        more regions each year, ensuring our customers can reach us with ease.
+      </p>
+      <div className="max-w-2xl">
+        <Link href="/contact" passHref>
+          <button className="px-6 py-3 bg-blue-600 text-white uppercase font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">
+            CONTACT US
+          </button>
+        </Link>
       </div>
+    </motion.div>
 
       <div ref={globeContainerRef} className="relative globe-container w-[628px] h-[557px]">
         {typeof window !== 'undefined' && (
