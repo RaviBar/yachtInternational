@@ -105,25 +105,25 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Navbar */}
-<div className="md:hidden w-full bg-[#06082E] flex justify-between items-center shadow-sm px-4 py-3">
+<div className="md:hidden w-full bg-white flex justify-between items-center shadow-sm px-4 py-3">
   <Link href="/">
-    <Image src="/images/logo.png" alt="Logo" width={80} height={20} />
+    <Image src="/images/new-logo.jpg" alt="Logo" width={40} height={20} />
   </Link>
-  <button onClick={toggleMobileMenu} className="text-white">
+  <button onClick={toggleMobileMenu} className="text-[#06082E]">
     {<Menu size={28} />}
   </button>
 </div>
 
 {/* Mobile Sidebar */}
 <div
-  className={`fixed top-0 right-0 w-3/4 h-full bg-[#06082E] z-50 shadow-lg flex flex-col p-3 space-y-6 transform transition-transform duration-300 ${
+  className={`fixed top-0 right-0 w-3/4 h-full bg-white z-50 shadow-lg flex flex-col p-3 space-y-6 transform transition-transform duration-300 ${
     mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
   }`}
 >
   <div className="flex justify-end items-center mb-4 space-x-4">
     {/* Flag Selector */}
     <FlagDropdown/>
-  <button onClick={toggleMobileMenu} className="text-white">
+  <button onClick={toggleMobileMenu} className="text-[#06082E]">
       <X size={24} />
   </button>
   </div>
@@ -134,19 +134,19 @@ const Navbar = () => {
         key={item.name}
         href={item.path}
         onClick={toggleMobileMenu}
-        className="text-md font-medium text-white"
+        className="text-md font-medium text-[#06082E]"
       >
         {item.name}
       </Link>
     ))}
     <Link href="/contact" passHref>
-    <button className="bg-white text-gray-900 font-semibold border border-blue-600 px-6 py-2 rounded-sm hover:bg-blue-600 hover:text-white transition-colors">
+    <button className="bg-white text-[#06082E] font-semibold border border-[#06082E] px-6 py-2 rounded-sm hover:bg-blue-600 hover:text-white transition-colors">
       Contact Us
     </button>
     </Link>
   </nav>
     
-    <div className="items-center text-sm font-Hind Guntur text-white pl-2">
+    <div className="items-center text-sm font-Hind Guntur text-[#06082E] pl-2">
             <div className="flex items-center space-x-1 pb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

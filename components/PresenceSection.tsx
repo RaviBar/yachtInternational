@@ -1,4 +1,5 @@
 "use client";
+import Head from 'next/head';
 import { useEffect, useState } from "react";
 
 const backgrounds = [
@@ -16,24 +17,37 @@ const PresenceSection = () => {
   }, []);
 
   return (
-    <section
-      className="relative w-full h-[611px] md:px-[82px] px-6 py-[60px] flex md:flex-row flex-col items-center md:items-start overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${backgrounds[currentIndex]})`,
-        backgroundSize: "100%",
-        backgroundPosition: "50% 70%",
-        
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-20 z-0" />
+    <>
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          href={backgrounds[0]}
+          type="image/webp"
+        />
+      </Head>
 
-      {/* Text Content */}
-      <div className="relative z-10 md:ml-10 w-full md:w-[625px] flex flex-col p-12 gap-[50px]">
-        <h2 className="font-oswald font-medium text-[35px] md:text-[38px] leading-[39px] tracking-[-0.04em] text-white">
-          SINGAPORE PRESENCE
-        </h2>
-        <div className="font-Hind Guntur font-normal flex flex-col gap-[24px] text-white text-justify">
+      <section
+        className={`
+          relative w-full h-[611px] md:px-[82px] px-6 py-[60px] 
+          flex md:flex-row flex-col items-center md:items-start 
+          overflow-hidden bg-no-repeat bg-center md:bg-cover
+        `}
+        style={{
+          backgroundImage: `url(${backgrounds[currentIndex]})`,
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-20 z-0" />
+
+        {/* Text Content */}
+        <div className="relative z-10 md:ml-10 w-full md:w-[625px] flex flex-col p-12 gap-[50px]">
+          <h2 className="font-oswald font-medium text-[35px] md:text-[38px] leading-[39px] tracking-[-0.04em] text-white">
+            SINGAPORE PRESENCE
+          </h2>
+          <div className="font-Hind Guntur font-normal flex flex-col gap-[24px] text-white text-justify">
           <p className="text-[16px] md:text-[17px] leading-[24px] tracking-[0.01em]">
             With over two decades of global shipping expertise, we confidently expanded into Singapore, establishing a reputable subsidiary and group of companies.
           </p>
@@ -44,8 +58,9 @@ const PresenceSection = () => {
           In Singapore, we focus on crew and cargo operations, leveraging technology and digital innovations to enhance efficiency and strengthen our maritime leadership.
           </p>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 };
 
