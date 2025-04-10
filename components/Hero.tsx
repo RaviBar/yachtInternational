@@ -23,7 +23,7 @@ const Hero = () => {
         <div
           key={index}
           className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-65 z-0' : 'opacity-0 z-0'
+            index === currentSlide ? 'opacity-80 z-0' : 'opacity-0 z-0'
           }`}
           style={{ backgroundImage: `url(${image})` }}
         />
@@ -35,13 +35,13 @@ const Hero = () => {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="text-white max-w-3xl"
+          className="text-white max-w-3xl -mt-16"
         >
-          <h1 className="text-4xl font-oswald md:text-6xl font-extrabold uppercase leading-tight tracking-[-0.03em]">
+          <h1 className="text-4xl font-oswald md:text-6xl font-extrabold uppercase  leading-tight tracking-[-0.03em]">
             Welcome to Yacht <br /> International Singapore
           </h1>
           <div className="text-white max-w-xl text-justify">
-          <p className="text-lg font-oswald mt-4 font-semibold text-white tracking-[0.001em]">
+          <p className="text-lg font-oswald font-semibold text-white tracking-[0.001em]">
             Your go-to maritime support provider in Singapore since 2023
           </p>
           <p className="text-base font-oswald font-semibold md:text-lg mt-4 mb-8 leading-relaxed text-gray-200 tracking-[0.01em]">

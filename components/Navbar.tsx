@@ -21,23 +21,24 @@ const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <nav className="hidden z-50 md:flex w-full max-w-full h-[117px] relative bg-white mx-auto">
-        <div className="w-[335px] h-full bg-[#06082E] relative custom-clip z-10">
-          <Link href="/" passHref>
-            <div className="absolute top-[-14px] left-[68px] w-[149px] h-[900px]">
-              <Image
-                src="/images/Yacht Intl(Poseidon Navi) Logo (1).png"
-                alt="Yacht Logo"
-                width={149}
-                height={110}
-                priority
-              />
-            </div>
-          </Link>
-        </div>
+      <div className="w-[335px] bg-white relative flex justify-center items-center custom-clip z-10">
+  <Link href="/" passHref>
+    <div className="w-[149px] flex justify-start items-center">
+      <Image
+        src="/images/new-logo.jpg"
+        alt="Yacht Logo"
+        width={100}
+        height={110}
+        priority
+      />
+    </div>
+  </Link>
+</div>
+
 
         {/* Top Navbar Section */}
-        <div className="absolute top-0 left-[254px] right-0 h-[44px] flex items-center justify-between px-6 bg-[#06082E]">
-          <div className="flex items-center space-x-8 text-sm font-Hind Guntur text-white pl-12">
+        <div className="absolute top-0 left-[254px] right-0 h-[44px] flex items-center justify-between px-6 bg-white z-[1000]">
+          <div className="flex items-center space-x-8 text-sm font-Hind Guntur text-[#06082E] pl-12">
             <div className="flex items-center space-x-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,39 +57,39 @@ const Navbar = () => {
             <span>Email: singapore.office@yacht-intl.com</span>
           </div>
 
-          <div className="flex space-x-4 items-center">
-          <FlagDropdown />
+          <div className="flex space-x-4 text-[#06082E] items-center">
             <a href="https://www.facebook.com/yachtintl/" aria-label="Facebook">
-              <Image src="/icons/facebook.svg" alt="Facebook" width={12} height={12} />
+              <Image src="/icons/icons8-facebook.svg" alt="Facebook" width={22} height={22} />
             </a>
             <a href="https://x.com/yachtintl" aria-label="Twitter">
-              <Image src="/icons/twitter.svg" alt="Twitter" width={18} height={18} />
+              <Image src="/icons/icons8-x.svg" alt="Twitter" width={22} height={22} />
             </a>
             <a href="https://www.linkedin.com/company/yachtintl/" aria-label="Linkedin">
-              <Image src="/icons/linkedin.png" alt="Linkedin" width={18} height={18} />
+              <Image src="/icons/icons8-linkedin.svg" alt="Linkedin" width={22} height={22} />
             </a>
             <a href="https://www.instagram.com/yachtintl" aria-label="Instagram">
-              <Image src="/icons/instagram.svg" alt="Instagram" width={18} height={18} />
+              <Image src="/icons/icons8-instagram.svg" alt="Instagram" width={22} height={22} />
             </a>
           </div>
         </div>
 
         {/* Bottom Navbar Section */}
-        <div className="absolute top-[49px] left-[375px] right-0 h-[64px] flex items-center justify-between px-4 bg-white">
-          <div className="flex space-x-8 font-oswald">
+        <div className="absolute top-[44px] left-[254px] right-0 h-[73px] flex items-center justify-between px-4 bg-[#0057EB]">
+          <div className="flex space-x-8 font-oswald pl-22">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.path}
-                className="relative group text-[#06082E] text-sm font-semibold"
+                className="relative group text-white text-sm font-semibold"
               >
                 {item.name}
-                <span className="absolute left-1/2 -translate-x-1/2 -bottom-[2px] w-3/4 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-110 transition-transform origin-center"></span>
+                <span className="absolute left-1/2 -translate-x-1/2 -bottom-[2px] w-3/4 h-[2px] bg-gray-200 scale-x-0 group-hover:scale-x-110 transition-transform origin-center"></span>
               </Link>
             ))}
           </div>
 
           <div className="flex items-center space-x-4 relative">
+            <FlagDropdown />
             <Link href="/contact" passHref>
               <button className="bg-white text-gray-900 font-semibold border border-blue-600 px-6 py-2 rounded-sm hover:bg-blue-600 hover:text-white transition-colors">
                 Contact Us
