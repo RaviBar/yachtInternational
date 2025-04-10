@@ -31,12 +31,12 @@ const PresenceSection = () => {
         className={`
           relative w-full h-[611px] md:px-[82px] px-6 py-[60px] 
           flex md:flex-row flex-col items-center md:items-start 
-          overflow-hidden bg-no-repeat bg-center md:bg-cover
+          overflow-hidden 
+          md:bg-[length:100%] md:bg-[position:50%_70%] 
+          bg-no-repeat bg-center bg-cover
         `}
         style={{
           backgroundImage: `url(${backgrounds[currentIndex]})`,
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center',
         }}
       >
         {/* Overlay */}
