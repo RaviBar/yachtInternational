@@ -13,6 +13,9 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 export const metadata: Metadata = {
   title: 'Yacht International Singapore',
   description: 'Your go to maritime support provider in Singapore since 2023',
+  icons: {
+    icon: "/new-logo.ico",
+  },
 };
 
 export default function RootLayout({

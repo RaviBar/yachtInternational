@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 const backgrounds = [
-  "/images/Singapore-presence/aerial-view-cargo-ship-cargo-container-harbor[1].jpg",
+  "/images/Singapore-presence/aerial-view-cargo-ship-cargo-container-harbor[1].webp",
 ];
 
 const PresenceSection = () => {
